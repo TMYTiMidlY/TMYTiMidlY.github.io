@@ -39,19 +39,29 @@ if (searchQuery) {
 
                 var a = document.createElement('a');
                 a.textContent = schedule.start_time;
-                a.href = `https://v.ustc.edu.cn/api/v1/captures/${schedule.capture_code}/capture-iframe-url?language=zh-CN&is_lesson_resource=false`
+                a.href = ''
                 a.target = "_blank";
 
-                // a.addEventListener('click', function (e) {
-                //     e.preventDefault();
-                //     fetch(`https://v.ustc.edu.cn/api/v1/captures/${schedule.capture_code}/capture-iframe-url?language=zh-CN&is_lesson_resource=false`)
-                //         .then(response => response.json())
-                //         .then(data => {
-                //             if (data.error) {
-                //                 alert(data.error.message)
-                //             }
-                //         })
-                // });
+                a.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    // function reqListener() {
+                    //     console.log(this.responseText);
+                    // }
+
+                    // var oReq = new XMLHttpRequest();
+                    // oReq.addEventListener("load", reqListener);
+                    // oReq.open("GET", `https://v.ustc.edu.cn/api/v1/captures/${schedule.capture_code}/capture-iframe-url?language=zh-CN&is_lesson_resource=false`);
+                    // oReq.send();
+
+                    fetch(`https://v.ustc.edu.cn/api/v1/captures/${schedule.capture_code}/capture-iframe-url?language=zh-CN&is_lesson_resource=false`, { credentials: 'include' })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.error) {
+                                alert(data.error.message)
+                            }
+                            console.log(data)
+                        })
+                });
 
                 li.appendChild(a)
                 ul.appendChild(li);
