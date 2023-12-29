@@ -4,9 +4,9 @@ const searchQuery = params.get('q');
 const courseID = params.get('id');
 const help = document.getElementById('help');
 
-// help.style.display = 'none'
 
 if (searchQuery) {
+    help.style.display = 'none'
     fetch('./cources.json')
         .then(response => response.json())
         .then(data => {
@@ -28,7 +28,7 @@ if (searchQuery) {
         });
 
 } else if (courseID) {
-    // help.style.display = 'block'
+    help.style.display = 'block'
     fetch(`https://v.ustc.edu.cn/api/v1/course/${courseID}/schedules`)
         .then(response => response.json())
         .then(data => {
