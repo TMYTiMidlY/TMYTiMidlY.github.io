@@ -1,6 +1,10 @@
+
 const params = new URLSearchParams(window.location.search);
 const searchQuery = params.get('q');
 const courseID = params.get('id');
+const help = document.getElementById('help');
+
+// help.style.display = 'none'
 
 if (searchQuery) {
     fetch('./cources.json')
@@ -22,7 +26,9 @@ if (searchQuery) {
                 ul.appendChild(li);
             });
         });
-} else {
+
+} else if (courseID) {
+    // help.style.display = 'block'
     fetch(`https://v.ustc.edu.cn/api/v1/course/${courseID}/schedules`)
         .then(response => response.json())
         .then(data => {
@@ -33,25 +39,23 @@ if (searchQuery) {
 
                 var a = document.createElement('a');
                 a.textContent = schedule.start_time;
-                a.href = '';
+                a.href = `https://v.ustc.edu.cn/api/v1/captures/${schedule.capture_code}/capture-iframe-url?language=zh-CN&is_lesson_resource=false`
                 a.target = "_blank";
 
-                a.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    fetch(`https://v.ustc.edu.cn/api/v1/captures/${schedule.capture_code}/capture-iframe-url?language=zh-CN&is_lesson_resource=false`)
-                        .then(response => response.json())
-                        .then(data => {
-                            if (data.error) {
-                                alert(data.error.message)
-                            }
-                            console.log(`https://v.ustc.edu.cn/api/v1/captures/${schedule.capture_code}/capture-iframe-url?language=zh-CN&is_lesson_resource=false`)
-                            console.log(data)
-                            // window.open();
-                        })
-                });
+                // a.addEventListener('click', function (e) {
+                //     e.preventDefault();
+                //     fetch(`https://v.ustc.edu.cn/api/v1/captures/${schedule.capture_code}/capture-iframe-url?language=zh-CN&is_lesson_resource=false`)
+                //         .then(response => response.json())
+                //         .then(data => {
+                //             if (data.error) {
+                //                 alert(data.error.message)
+                //             }
+                //         })
+                // });
 
                 li.appendChild(a)
                 ul.appendChild(li);
             });
         });
+
 }

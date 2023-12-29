@@ -7,12 +7,17 @@
 </head>
 
 <body>
-
     <form action="">
-        <label for="site-search">课程号或课程ID：</label>
+        <label for="site-search">课程名或课程ID：</label>
         <input type="search" id="site-search" name="q" aria-label="Search through site content">
         <button type="submit">搜索</button>
     </form>
+
+    <div id="help" style="display:none;">
+        <h2>需要先在<a href="http://v.ustc.edu.cn">v.ustc.edu.cn</a>登录，选择课程后访问json中的url即可</h2>
+        <img src="example.png" style="width:100%;">
+    </div>
+
     <ul id="courseList"></ul>
     <script src="script.js"></script>
 </body>
