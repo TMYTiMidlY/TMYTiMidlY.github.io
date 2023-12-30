@@ -1,4 +1,57 @@
 <!DOCTYPE HTML>
+<style>
+    /* 美化文本框 */
+    input[type="search"] {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        outline: none;
+		width: 100%;
+    }
+
+    /* 美化卡片样式 */
+    .course-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    .course-card .image {
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .course-card h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .course-card p {
+        margin-bottom: 10px;
+    }
+
+    .course-card .actions {
+        display: flex;
+        justify-content: center;
+    }
+
+    .course-card .actions .button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+</style>
 <!--
 	Alpha by HTML5 UP
 	html5up.net | @ajlkn
@@ -28,45 +81,77 @@
 
 			<!-- Banner -->
 				<section id="banner">
-					<h2></h2>
+					<h2>Alpha</h2>
+					<p>Another fine responsive site template freebie by HTML5 UP.</p></h2>
 					<!-- <input type="search" id="site-search" name="q" aria-label="Search through site content">
 					<li><a href="#" class="button">Learn More</a></li> -->
 
-				<div class="row gtr-50 gtr-uniform">
-					<form action="">
-						<div class="col-8 col-12-mobilep">
-							<input type="search" name="q" placeholder="课程名或课程ID" />
-						</div>
-						<div class="col-4 col-12-mobilep">
-							<input type="submit" value="搜索" class="fit" />
-						</div>
-					</form>
-						<div id="help" style="display:none;">
-							<h2>需要先在<a href="http://v.ustc.edu.cn">v.ustc.edu.cn</a>登录，选择课程后访问json中的url即可</h2>
-							<img src="example.png" style="width:100%;">
-						</div>
-						<ul id="courseList"></ul>
+					<div class="row gtr-50 gtr-uniform" style="display: flex; justify-content: center;">
+						
+						<form action="">
+							<div class="row gtr-50 gtr-uniform">
+								<div class="col-8 col-12-mobilep">
+									<input type="search" name="q" placeholder="课程名或课程ID" />
+								</div>
+								<div class="col-4 col-12-mobilep">
+									<input type="submit" value="搜索" class="fit" />
+								</div>
+							</div>
+						</form>
+					</div>
+					
 				</section>
 			<!-- Main -->
 				<section id="main" class="container">
-
+					
+					
 					<section class="box special">
+						<div id="help" style="display:none;">
+						
+							<img src="example.png" style="width:100%;">
+							<h4>需要先在<a href="http://v.ustc.edu.cn">v.ustc.edu.cn</a>登录，选择课程后访问json中的url即可</h4>
+						</div>
 						<header class="major">
-							<h2>欢迎follow我的github账号 <li><a href="https://github.com/TMYTiMidlY" class="icon brands fa-github"><span class="label">Github</span></a></li></h2>
+							<div id="courseList"></div>
+							<ul id="courseList"></ul>
+							<ul id="courseList">
+								<li>
+									<div class="col-6 col-12-narrower">
+										<section class="box special course-card">
+											<span class="image featured"><img src="images/pic02.jpg" alt="" /></span>
+											<h3>Sed lorem adipiscing</h3>
+											<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+											<ul class="actions special">
+												<li><a href="#" class="button alt">Learn More</a></li>
+											</ul>
+										</section>
+									</div>
+								</li>
+								<!-- 添加更多卡片项 -->
+							</ul>
+							
 							
 						</header>
-						<span class="image featured"><img src="images/pic01.jpg" alt="" /></span>
+						
 					</section>
 				 </section>
+				 <section id="cta">
 
+					<h2>Welcome to follow my GitHub account<li><a href="https://github.com/TMYTiMidlY" class="icon brands fa-github"><span class="label">Github</span></a></li></h2>
+					
+				</section>
+					
+		
 				<footer id="footer">
 					
 					<ul class="copyright">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">alpha</a></li>
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="https://github.com/alpha1958627" class="icon brands fa-github"><span class="label">Github</span></a></li>
 					</ul>
 				</footer>
 
 		</div>
+		
+		
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
@@ -76,19 +161,6 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
-			<form action="">
-				<label for="site-search">课程名或课程ID：</label>
-				<input type="search" id="site-search" name="q" aria-label="Search through site content">
-				<button type="submit">搜索</button>
-			</form>
-		
-			<div id="help" style="display:none;">
-				<h2>需要先在<a href="http://v.ustc.edu.cn">v.ustc.edu.cn</a>登录，选择课程后访问json中的url即可</h2>
-				<img src="example.png" style="width:100%;">
-			</div>
-		
-			<ul id="courseList"></ul>
 			<script src="script.js"></script>
 	</body>
 </html>
