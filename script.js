@@ -27,33 +27,32 @@ if (searchQuery) {
     //         });
     //     });
     fetch('./cources.json')
-    .then(response => response.json())
-    .then(data => {
-      let searchResults = data.data.items.filter(course => course.name.includes(searchQuery) || course.code.includes(searchQuery));
-  
-      var resultsEl = document.getElementById('courseList');
-  
-      searchResults.forEach(course => {
-        var card = document.createElement('div');
-        card.classList.add('card');
-        
-        var nameEl = document.createElement('h3');
-        nameEl.textContent = course.name;
-        
-        var codeEl = document.createElement('p'); 
-        codeEl.textContent = course.code;
-  
-        var link = document.createElement('a');
-        link.href = `${window.location.origin}/?id=${course.id}`;
-        link.textContent = "View Course";
-  
-        card.appendChild(nameEl);
-        card.appendChild(codeEl);
-        card.appendChild(link);
-        
-        resultsEl.appendChild(card);
-      });
+  .then(response => response.json())
+  .then(data => {
+    let searchResults = data.data.items.filter(course => course.name.includes(searchQuery) || course.code.includes(searchQuery));
+
+    var resultsEl = document.getElementById('courseList');
+
+    searchResults.forEach(course => {
+      var card = document.createElement('div');
+      card.classList.add('card');
+      card.style.border = '1px solid #ccc';
+      var nameEl = document.createElement('h3');  
+      nameEl.textContent = course.name;
+      card.className = 'card';    
+      var codeLink = document.createElement('a');
+      codeLink.href = `${window.location.origin}/?id=${course.id}`; 
+      codeLink.textContent = course.code;
+
+      card.appendChild(nameEl);
+      card.appendChild(codeLink);
+
+      resultsEl.appendChild(card);
+
+
+      
     });
+  });
 } else if (courseID) {
     help.style.display = 'block'
     fetch(`https://v.ustc.edu.cn/api/v1/course/${courseID}/schedules`)

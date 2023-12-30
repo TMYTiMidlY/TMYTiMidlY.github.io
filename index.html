@@ -10,47 +10,15 @@
 		width: 100%;
     }
 
-    /* 美化卡片样式 */
-    .course-card {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 20px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        margin-bottom: 10px;
-    }
+	.card {
+  border: 1px solid #ccc;
+  padding: 10px;  
+  margin: 10px;
+}
 
-    .course-card .image {
-        max-width: 100%;
-        margin-bottom: 10px;
-    }
-
-    .course-card h3 {
-        font-size: 20px;
-        margin-bottom: 10px;
-    }
-
-    .course-card p {
-        margin-bottom: 10px;
-    }
-
-    .course-card .actions {
-        display: flex;
-        justify-content: center;
-    }
-
-    .course-card .actions .button {
-        padding: 10px 20px;
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        font-size: 16px;
-        cursor: pointer;
-        text-decoration: none;
-    }
+.card:hover {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
 </style>
 <!--
 	Alpha by HTML5 UP
@@ -81,20 +49,20 @@
 
 			<!-- Banner -->
 				<section id="banner">
-					<h2>Alpha</h2>
-					<p>Another fine responsive site template freebie by HTML5 UP.</p></h2>
+					<h2>另解
+					</h2>
+					<p><a href="https://github.com/TMYTiMidlY/capture-courses">利用Edge开发者工具做本地覆写</a>, 然后即可正常访问https://v.ustc.edu.cn/0/2023-1/capture-course/课程号/detail</a></p>
 					<!-- <input type="search" id="site-search" name="q" aria-label="Search through site content">
 					<li><a href="#" class="button">Learn More</a></li> -->
 
 					<div class="row gtr-50 gtr-uniform" style="display: flex; justify-content: center;">
-						
-						<form action="">
+						<form action="" style="width: 80%;">
 							<div class="row gtr-50 gtr-uniform">
-								<div class="col-8 col-12-mobilep">
-									<input type="search" name="q" placeholder="课程名或课程ID" />
+								<div class="col-9 col-12-mobilep">
+									<input type="search" name="q" placeholder="课程名或课程ID" style="width: 100%;" />
 								</div>
-								<div class="col-4 col-12-mobilep">
-									<input type="submit" value="搜索" class="fit" />
+								<div class="col-3 col-12-mobilep">
+									<input type="submit" value="搜索" class="fit" style="width: 100%;" />
 								</div>
 							</div>
 						</form>
@@ -112,25 +80,7 @@
 							<h4>需要先在<a href="http://v.ustc.edu.cn">v.ustc.edu.cn</a>登录，选择课程后访问json中的url即可</h4>
 						</div>
 						<header class="major">
-							<div id="courseList"></div>
-							<ul id="courseList"></ul>
-							<ul id="courseList">
-								<li>
-									<div class="col-6 col-12-narrower">
-										<section class="box special course-card">
-											<span class="image featured"><img src="images/pic02.jpg" alt="" /></span>
-											<h3>Sed lorem adipiscing</h3>
-											<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
-											<ul class="actions special">
-												<li><a href="#" class="button alt">Learn More</a></li>
-											</ul>
-										</section>
-									</div>
-								</li>
-								<!-- 添加更多卡片项 -->
-							</ul>
-							
-							
+							<div id="courseList"></div>		
 						</header>
 						
 					</section>
