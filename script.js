@@ -2,8 +2,8 @@
 const params = new URLSearchParams(window.location.search);
 const searchQuery = params.get('q');
 const courseID = params.get('id');
+const code = params.get('code');
 const help = document.getElementById('help');
-
 
 if (searchQuery) {
     help.style.display = 'none'
@@ -57,5 +57,21 @@ if (searchQuery) {
                 ul.appendChild(li);
             });
         });
-
+} else if (code) {
+    console.log(1)
+    async function loadData() {
+        let response = await fetch('./cources.json');
+        let data = await response.json();
+        console.log(data)
+        let results = {
+            "data": data.data.items.filter(course => course.code.includes(code))[0], "error": {
+                "code": 0,
+                "details": {},
+                "message": "",
+                "status": "OK"
+            }
+        };
+        document.body.innerText = JSON.stringify(results, null, 2);
+    }
+    window.onload = loadData;
 }
