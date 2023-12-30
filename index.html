@@ -1,26 +1,94 @@
-<!DOCTYPE html>
-<html lang="zh">
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Timidly's homepage</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="landing is-preload">
+		<div id="page-wrapper">
 
-<head>
-    <meta charset="UTF-8">
-    <title>网站标题</title>
-</head>
+			<!-- Header -->
+				<header id="header" class="alt">
+					<h1><a href="index.html">Timidly</a> 's homepage</h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html">课程回看工具</a></li>
+						
+					
+						</ul>
+					</nav>
+				</header>
 
-<body>
-    <form action="">
-        <label for="site-search">课程名或课程ID：</label>
-        <input type="search" id="site-search" name="q" aria-label="Search through site content">
-        <button type="submit">搜索</button>
-    </form>
+			<!-- Banner -->
+				<section id="banner">
+					<h2></h2>
+					<!-- <input type="search" id="site-search" name="q" aria-label="Search through site content">
+					<li><a href="#" class="button">Learn More</a></li> -->
 
-    <div id="help" style="display:none;">
-        <h2>需要先在<a href="http://v.ustc.edu.cn">v.ustc.edu.cn</a>登录，选择课程后访问json中的url即可</h2>
-        <img src="example.png" style="width:100%;">
-    </div>
+				<div class="row gtr-50 gtr-uniform">
+					<form action="">
+						<div class="col-8 col-12-mobilep">
+							<input type="search" name="q" placeholder="课程名或课程ID" />
+						</div>
+						<div class="col-4 col-12-mobilep">
+							<input type="submit" value="搜索" class="fit" />
+						</div>
+					</form>
+						<div id="help" style="display:none;">
+							<h2>需要先在<a href="http://v.ustc.edu.cn">v.ustc.edu.cn</a>登录，选择课程后访问json中的url即可</h2>
+							<img src="example.png" style="width:100%;">
+						</div>
+						<ul id="courseList"></ul>
+				</section>
+			<!-- Main -->
+				<section id="main" class="container">
 
-    <ul id="courseList"></ul>
-    <script src="script.js"></script>
-</body>
+					<section class="box special">
+						<header class="major">
+							<h2>欢迎follow我的github账号 <li><a href="https://github.com/TMYTiMidlY" class="icon brands fa-github"><span class="label">Github</span></a></li></h2>
+							
+						</header>
+						<span class="image featured"><img src="images/pic01.jpg" alt="" /></span>
+					</section>
+				 </section>
 
+				<footer id="footer">
+					
+					<ul class="copyright">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">alpha</a></li>
+					</ul>
+				</footer>
 
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+			<form action="">
+				<label for="site-search">课程名或课程ID：</label>
+				<input type="search" id="site-search" name="q" aria-label="Search through site content">
+				<button type="submit">搜索</button>
+			</form>
+		
+			<div id="help" style="display:none;">
+				<h2>需要先在<a href="http://v.ustc.edu.cn">v.ustc.edu.cn</a>登录，选择课程后访问json中的url即可</h2>
+				<img src="example.png" style="width:100%;">
+			</div>
+		
+			<ul id="courseList"></ul>
+			<script src="script.js"></script>
+	</body>
 </html>
