@@ -17,6 +17,7 @@ if (searchQuery) {
             searchResults.forEach(course => {
                 var card = document.createElement('div');
                 card.classList.add('card');
+                card.style.padding = '10px';
                 card.style.border = '1px solid #ccc';
                 var nameEl = document.createElement('h3');
                 nameEl.textContent = course.name;
@@ -48,6 +49,7 @@ if (searchQuery) {
             data.data.forEach(schedule => {
                 var card = document.createElement('div');
                 card.classList.add('card');
+                card.style.padding = '10px';
                 card.style.border = '1px solid #ccc';
                 var nameEl = document.createElement('h3');
 
