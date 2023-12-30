@@ -2,29 +2,29 @@
 <html lang="zh">
 
 <head>
-    <meta charset="UTF-8">
-    <title>TMYTiMidlY</title>
+	<meta charset="UTF-8">
+	<title>TMYTiMidlY</title>
 </head>
 
 <body>
+	<h1>课程回看临时解决方案，仅作期末复习用途，下载的视频请勿外传</h1>
+	<h2>另解:<a href="https://github.com/TMYTiMidlY/capture-courses">利用Edge开发者工具做本地覆写</a>, 然后即可正常访问<a
+			href="https://v.ustc.edu.cn/0/2023-1/capture-course/课程号/detail">https://v.ustc.edu.cn/0/2023-1/capture-course/课程号/detail</a>
+	</h2>
 
-    <h2>另解:<a href="https://github.com/TMYTiMidlY/capture-courses">利用Edge开发者工具做本地覆写</a>, 然后即可正常访问<a
-            href="https://v.ustc.edu.cn/0/2023-1/capture-course/课程号/detail">https://v.ustc.edu.cn/0/2023-1/capture-course/课程号/detail</a>
-    </h2>
+	<form action="">
+		<label for="site-search">课程名或课程ID：</label>
+		<input type="search" id="site-search" name="q" aria-label="Search through site content">
+		<button type="submit">搜索</button>
+	</form>
 
-    <form action="">
-        <label for="site-search">课程名或课程ID：</label>
-        <input type="search" id="site-search" name="q" aria-label="Search through site content">
-        <button type="submit">搜索</button>
-    </form>
+	<div id="help" style="display:none;">
+		<h2>需要先在<a href="http://v.ustc.edu.cn">v.ustc.edu.cn</a>登录，选择课程后访问json中的url即可</h2>
+		<img src="example.png" style="width:100%;">
+	</div>
 
-    <div id="help" style="display:none;">
-        <h2>需要先在<a href="http://v.ustc.edu.cn">v.ustc.edu.cn</a>登录，选择课程后访问json中的url即可</h2>
-        <img src="example.png" style="width:100%;">
-    </div>
-
-    <ul id="courseList"></ul>
-    <script src="script.js"></script>
+	<ul id="courseList"></ul>
+	<script src="script.js"></script>
 </body>
 
 
