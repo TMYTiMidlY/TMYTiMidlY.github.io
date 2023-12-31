@@ -4,9 +4,9 @@ const searchQuery = params.get('q');
 const courseID = params.get('id');
 const resultsEl = document.getElementById('courseList');
 const help = document.getElementById('help');
+const footer = document.getElementById('footer');
 
 if (searchQuery) {
-    help.style.display = 'none'
     fetch('./cources.json')
         .then(response => response.json())
         .then(data => {
@@ -35,6 +35,7 @@ if (searchQuery) {
 
 } else if (courseID) {
     help.style.display = 'block'
+    footer.style.display = 'block'
 
     var loading = document.createElement('h3');
     loading.textContent = '加载中...';
